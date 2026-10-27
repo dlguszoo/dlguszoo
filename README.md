@@ -29,7 +29,7 @@
     height="200"
   />
   <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=dlguszoo&layout=compact&hide=Java&title_color=7BA0C4&text_color=2D3748&bg_color=F6F6F6&hide_border=true"
-    height="235"
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=dlguszoo&layout=compact&langs_count=10&hide=Java&title_color=7BA0C4&text_color=2D3748&bg_color=F6F6F6&hide_border=true"
+    height="200"
   />
 </div>
