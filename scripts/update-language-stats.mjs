@@ -1,31 +1,52 @@
 import fs from 'node:fs/promises';
 
-const repositories = [
-  'FOR-GRAD/For-Grad-Server',
-  'Drink-Easy/DE_iOS',
-  'DropDrugs/iOS_dd',
-  'ChungBazi/ChungBazi-iOS-V2',
-  'CheerLotTeam/cheerlot-ios',
-  'CheerLotTeam/cheerlot-android',
-  'DeveloperAcademy-POSTECH/2025-C6-A6-Bracket',
-  'DevaultProject/DeVault-macOS',];
+const username = 'dlguszoo';
+const apiHeaders = {
+  Accept: 'application/vnd.github+json',
+  'User-Agent': username + '-language-stats',
+  ...(process.env.GITHUB_TOKEN ? { Authorization: 'Bearer ' + process.env.GITHUB_TOKEN } : {}),
+};
 
-
-const hiddenLanguages = new Set();
-const colors = { Swift: '#F05138', Kotlin: '#7F52FF', JavaScript: '#F1E05A', TypeScript: '#3178C6', HTML: '#E34C26', CSS: '#563D7C', Java: '#B07219', Python: '#3572A5', Ruby: '#701516', Shell: '#89E051', Dart: '#00B4AB', C: '#555555', 'C++': '#F34B7D', 'Objective-C': '#438EFF', Mustache: '#724B3B', Other: '#8B949E' };
-const escapeXml = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('\"', '&quot;');
-
-async function fetchLanguages(repository) {
-  const response = await fetch('https://api.github.com/repos/' + repository + '/languages', { headers: { Accept: 'application/vnd.github+json', 'User-Agent': 'dlguszoo-language-stats' } });
-  if (!response.ok) throw new Error(repository + ': HTTP ' + response.status);
+async function githubJson(url) {
+  const response = await fetch(url, { headers: apiHeaders });
+  if (!response.ok) throw new Error(url + ': HTTP ' + response.status);
   return response.json();
 }
 
+async function discoverRepositories() {
+  const repositories = new Set();
+  const query = encodeURIComponent('author:' + username);
+
+  for (let page = 1; page <= 10; page += 1) {
+    const result = await githubJson('https://api.github.com/search/commits?q=' + query + '&per_page=100&page=' + page);
+    const items = result.items || [];
+
+    for (const item of items) {
+      const repository = item.repository;
+      if (repository?.full_name && repository.private === false) {
+        repositories.add(repository.full_name);
+      }
+    }
+
+    if (items.length < 100 || repositories.size >= 1000) break;
+  }
+
+  if (repositories.size === 0) {
+    throw new Error('No public repositories found for ' + username);
+  }
+
+  return Array.from(repositories).sort();
+}
+
+const colors = { Swift: '#F05138', Kotlin: '#7F52FF', JavaScript: '#F1E05A', TypeScript: '#3178C6', HTML: '#E34C26', CSS: '#563D7C', Java: '#B07219', Python: '#3572A5', Ruby: '#701516', Shell: '#89E051', Dart: '#00B4AB', C: '#555555', 'C++': '#F34B7D', 'Objective-C': '#438EFF', Mustache: '#724B3B', Other: '#8B949E' };
+const escapeXml = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('\"', '&quot;');
+
+const repositories = await discoverRepositories();
 const totals = new Map();
 for (const repository of repositories) {
-  const languages = await fetchLanguages(repository);
+  const languages = await githubJson('https://api.github.com/repos/' + repository + '/languages');
   for (const [language, bytes] of Object.entries(languages)) {
-    if (!hiddenLanguages.has(language)) totals.set(language, (totals.get(language) || 0) + bytes);
+    totals.set(language, (totals.get(language) || 0) + bytes);
   }
 }
 
