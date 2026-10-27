@@ -1,5 +1,4 @@
 ## Hi there 👋 I'm Hyeon-Ju
----
 
 - Email: [lhjivy1024@gmail.com](mailto:lhjivy1024@gmail.com)  
 - LinkedIn: [www.linkedin.com/in/hzoo](https://www.linkedin.com/in/hzoo)
