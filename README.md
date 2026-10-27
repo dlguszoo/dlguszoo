@@ -1,9 +1,12 @@
 ## Hi there 👋 I'm Hyeon-Ju
 
+
 - Email: [lhjivy1024@gmail.com](mailto:lhjivy1024@gmail.com)  
 - LinkedIn: [www.linkedin.com/in/hzoo](https://www.linkedin.com/in/hzoo)
 
+
 ### Experience
+
 
 - Hongik University, Computer Engineering (2022.03 ~ Present)  
 - [HIUMC](https://github.com/HIUMC) 5th Spring Boot (2023.09 ~ 2024.02)  
@@ -11,7 +14,9 @@
 - [HIUMC](https://github.com/HIUMC) 7th iOS Lead (2024.09 ~ 2025.02)  
 - [Apple Developer Academy @ POSTECH](https://github.com/DeveloperAcademy-POSTECH) Cohort 2025 (2025.03 ~ 2025.12)
 
+
 ### Projects
+
 
 - 졸업 정보를 확인하고 관리해 계획적인 대학 생활을 돕는 서비스, [FORGRAD](https://github.com/FOR-GRAD/For-Grad-Server) (2023.12 ~ 2024.02)  
 - 와인 추천과 기록을 도와주는 서비스, [드링키지](https://github.com/Drink-Easy/DE_iOS) (2024.07 ~ 2025.09)  
@@ -21,7 +26,9 @@
 - Canon 카메라 조작과 사진 정리 부담을 줄이는 촬영 보조 서비스, [Bracket](https://github.com/DeveloperAcademy-POSTECH/2025-C6-A6-Bracket) (2025.09 ~ 2025.12)  
 - 개발 시크릿을 안전하게 보관·관리하는 서비스, [DeVault](https://github.com/DevaultProject/DeVault-macOS) (2026.03 ~ Present)
 
+
 ### Stats
+
 
 <div align="center">
   <img
@@ -29,7 +36,7 @@
     height="200"
   />
   <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=dlguszoo&layout=compact&title_color=7BA0C4&text_color=2D3748&bg_color=F6F6F6&hide_border=true"
+    src="./assets/most-used-languages.svg"
     height="200"
   />
 </div>
