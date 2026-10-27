@@ -8,10 +8,10 @@ const repositories = [
   'CheerLotTeam/cheerlot-ios',
   'CheerLotTeam/cheerlot-android',
   'DeveloperAcademy-POSTECH/2025-C6-A6-Bracket',
-  'DevaultProject/DeVault-macOS',
-];
+  'DevaultProject/DeVault-macOS',];
 
-const hiddenLanguages = new Set(['Java']);
+
+const hiddenLanguages = new Set();
 const colors = { Swift: '#F05138', Kotlin: '#7F52FF', JavaScript: '#F1E05A', TypeScript: '#3178C6', HTML: '#E34C26', CSS: '#563D7C', Java: '#B07219', Python: '#3572A5', Ruby: '#701516', Shell: '#89E051', Dart: '#00B4AB', C: '#555555', 'C++': '#F34B7D', 'Objective-C': '#438EFF', Mustache: '#724B3B', Other: '#8B949E' };
 const escapeXml = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('\"', '&quot;');
 
