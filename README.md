@@ -32,12 +32,12 @@
 
 <div align="center">
   <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=dlguszoo&theme=2077"
+    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=dlguszoo&theme=default"
     height="200"
     alt="GitHub Stats"
   />
   <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=dlguszoo&theme=2077&exclude=html"
+    src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=dlguszoo&theme=default&exclude=html"
     height="200"
     alt="Most Commit Languages"
   />
