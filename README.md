@@ -32,13 +32,13 @@
 
 <div align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api?username=dlguszoo&show_icons=true&title_color=7BA0C4&icon_color=4A5568&text_color=2D3748&bg_color=F6F6F6&hide_border=true&custom_title=Hyeon-ju%27s%20GitHub%20Stats"
+    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=dlguszoo&theme=2077"
     height="200"
-    alt="Hyeon-ju's GitHub Stats"
+    alt="GitHub Stats"
   />
   <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=dlguszoo&theme=default&exclude=html"
+    src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=dlguszoo&theme=2077&exclude=html"
     height="200"
     alt="Most Commit Languages"
   />
-</div>
+</div>>
